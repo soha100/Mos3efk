@@ -1,0 +1,146 @@
+<!-- لسه مكتملتش الصورة م بتظهر -->
+<div class="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+  <div class="col bg-primary">
+    <!-- Logo -->
+    <div class="text-center mb-8">
+      <img src="../../../../assets/stethoscope_check.png" alt="" />
+      <h2 class="text-[48px] font-bold text-primary font-arabic">مُسْعِفك</h2>
+    </div>
+  </div>
+  <div class="col w-full max-w-md">
+    <div class="bg-white rounded-2xl shadow-lg p-8">
+      <!-- Login Form -->
+      <h1 class="text-2xl font-bold text-center text-gray-800 mb-8">
+        تسجيل الدخول
+      </h1>
+
+      <form class="space-y-6" (ngSubmit)="onSubmit()">
+        <!-- Email Input -->
+        <!--  [(ngModel)]="email" -->
+        <div>
+          <div class="relative">
+            <div class="absolute inset-y-0 right-4 flex items-center">
+              <i class="fa-regular fa-envelope text-gray-400"></i>
+            </div>
+            <input
+              type="email"
+              name="email"
+              class="w-full px-10 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              placeholder="البريد الإلكتروني"
+            />
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <!--  [(ngModel)]="password" -->
+        <div>
+          <div class="relative">
+            <div class="absolute inset-y-0 right-4 flex items-center">
+              <i class="fa-solid fa-lock text-gray-400"></i>
+            </div>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              name="password"
+              class="w-full px-10 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              placeholder="كلمة المرور"
+            />
+            <div class="absolute inset-y-0 left-3 flex items-center">
+              <button
+                type="button"
+                (click)="togglePassword()"
+                class="text-gray-400 focus:outline-none"
+              >
+                <i
+                  [class]="
+                    showPassword
+                      ? 'fa-regular fa-eye'
+                      : 'fa-regular fa-eye-slash'
+                  "
+                ></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <div class="text-left">
+          <a href="#" class="text-primary hover:text-primary-dark text-sm"
+            >نسيت كلمة المرور؟</a
+          >
+        </div>
+
+        <!-- Login Button -->
+        <button
+          type="submit"
+          class="w-full bg-primary text-white py-3 rounded-full hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors duration-200"
+        >
+          تسجيل الدخول
+        </button>
+        <!-- Sign Up Link -->
+        <p class="text-center text-gray-600 mt-8">
+          ليس لديك حساب؟
+          <a href="#" class="text-primary hover:text-primary-dark"
+            >إنشاء حساب جديد</a
+          >
+        </p>
+        <!-- Divider -->
+        <div class="relative my-6">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-300"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="px-2 bg-white text-gray-500"
+              >تسجيل الدخول باستخدام</span
+            >
+          </div>
+        </div>
+
+        <!-- Social Login Buttons -->
+        <div class="space-y-4">
+          <button
+            type="button"
+            class="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-full hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          >
+            <i class="fab fa-facebook text-[#1877F2]"></i>
+            <span>الدخول باستخدام الفيسبوك</span>
+          </button>
+
+          <button
+            type="button"
+            class="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-full hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 326667 333333"
+              shape-rendering="geometricPrecision"
+              text-rendering="geometricPrecision"
+              image-rendering="optimizeQuality"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              width="20"
+              height="20"
+            >
+              <path
+                d="M326667 170370c0-13704-1112-23704-3518-34074H166667v61851h91851c-1851 15371-11851 38519-34074 54074l-311 2071 49476 38329 3428 342c31481-29074 49630-71852 49630-122593m0 0z"
+                fill="#4285f4"
+              />
+              <path
+                d="M166667 333333c44999 0 82776-14815 110370-40370l-52593-40742c-14074 9815-32963 16667-57777 16667-44074 0-81481-29073-94816-69258l-1954 166-51447 39815-673 1870c27407 54444 83704 91852 148890 91852z"
+                fill="#34a853"
+              />
+              <path
+                d="M71851 199630c-3518-10370-5555-21482-5555-32963 0-11482 2036-22593 5370-32963l-93-2209-52091-40455-1704 811C6482 114444 1 139814 1 166666s6482 52221 17777 74814l54074-41851m0 0z"
+                fill="#fbbc04"
+              />
+              <path
+                d="M166667 64444c31296 0 52406 13519 64444 24816l47037-45926C249260 16482 211666 1 166667 1 101481 1 45185 37408 17777 91852l53889 41853c13520-40185 50927-69260 95001-69260m0 0z"
+                fill="#ea4335"
+              />
+            </svg>
+            <span>الدخول باستخدام جوجل</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
