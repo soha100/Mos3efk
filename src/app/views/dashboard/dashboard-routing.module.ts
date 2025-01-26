@@ -4,11 +4,13 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { CommentsPageComponent } from './comments-page/comments-page.component';
 import { AppointmentPageComponent } from './appointment-page/appointment-page.component';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { ChatPageComponent } from './chat-page/chat-page.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'comments', component: CommentsPageComponent },
   { path: 'appointment', component: AppointmentPageComponent },
+  { path: 'chat', component: ChatPageComponent },
+  { path: 'comments', component: CommentsPageComponent },
   { path: 'doctor-profile', component: DoctorProfileComponent },
 ];
 

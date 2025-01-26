@@ -56,20 +56,4 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
     this.chart = new Chart('Mychart', this.config);
   }
-
-  selectedDate: Date | null = null;
-
-  // دعم النوع Date أو null
-  onDateSelected(date: Date | null): void {
-    this.selectedDate = date; // يمكن أن تكون null
-    console.log('Selected date:', this.selectedDate);
-  }
-
-  // تخصيص تاريخ مختار
-  dateClass = (date: Date): string => {
-    return this.selectedDate &&
-      date.toDateString() === this.selectedDate.toDateString()
-      ? 'selected-date'
-      : '';
-  };
 }

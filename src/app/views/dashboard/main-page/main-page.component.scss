@@ -1,3 +1,48 @@
-.demo-inline-calendar-card {
-  width: 300px;
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-calendar {
+  background-color: #d9f2e3; /* خلفية مشابهة */
+  border-radius: 1.5rem; /* حواف دائرية */
+  padding: 1rem; /* مسافات داخلية */
+  font-family: "Tajawal", sans-serif; /* خط عربي */
+  width: 100%; /* جعلها تناسب الحاوية */
+}
+
+.custom-calendar .mat-calendar-controls {
+  display: flex;
+  justify-content: space-between; /* توزيع العناوين بين الجانبين */
+  align-items: center;
+  color: #2f5d62; /* لون النص */
+}
+
+.custom-calendar .mat-calendar-arrow {
+  color: #2f5d62; /* لون الأسهم */
+}
+
+.custom-calendar .mat-calendar-table {
+  background: transparent; /* خلفية شفافة */
+}
+
+.custom-calendar .mat-calendar-body {
+  font-size: 0.875rem; /* حجم الخط */
+  color: #4f5159; /* لون الأيام */
+}
+
+.custom-calendar .mat-calendar-body-cell {
+  border-radius: 50%; /* شكل دائري للأيام */
+  padding: 0.5rem; /* مسافة داخلية مناسبة */
+}
+
+.custom-calendar .mat-calendar-body-today {
+  background-color: #a8d5ba; /* لون اليوم */
+  color: white;
+}
+
+.custom-calendar .mat-calendar-body-selected {
+  background-color: #2f5d62; /* لون اليوم المحدد */
+  color: white;
 }

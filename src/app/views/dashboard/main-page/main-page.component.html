@@ -5,25 +5,13 @@
   <!-- Right Column - Stats & Calendar -->
   <div class="flex-1">
     <!-- row-1 -->
-    <div class="flex flex-wrap p-3">
-      <div class="w-full md:w-1/2 p-6 rounded-3xl">
-        <!-- <mat-card class="">
-          <mat-calendar
-            [dateClass]="dateClass"
-            (selectedChange)="onDateSelected($event)"
-          >
-          </mat-calendar>
-        </mat-card> -->
-
-        <div
-          id="datepicker-inline"
-          inline-datepicker
-          data-date="02/25/2024"
-        ></div>
+    <div class="flex flex-wrap gap-8">
+      <div class="w-full md:w-1/3 rounded-3xl bg-[rgba(168,213,186,0.60)]">
+        <mat-calendar></mat-calendar>
       </div>
 
       <div
-        class="w-full md:w-1/2 p-6 rounded-3xl bg-[rgba(168,213,186,0.60)] h-[367px] drop-shadow-[10px_5px_12px_rgba(168,213,186,0.5)]"
+        class="w-full md:w-1/2 p-6 rounded-3xl bg-[rgba(168,213,186,0.60)] h-[367px] shadow-[10px_5px_12px_rgba(168,213,186,0.5)]"
       >
         <div class="">
           <div class="flex justify-between items-center mb-4">
