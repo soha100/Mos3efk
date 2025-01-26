@@ -16,14 +16,20 @@
   >
     <div class="p-6">
       <div class="flex justify-between items-center mb-8">
-        <h1 class="text-[40px] font-bold text-primary">مُسْعِفك</h1>
-        <img src="stethoscope_check (1).svg" alt="" />
+        <h1 class="text-[6vw] font-bold text-primary lg:text-[40px]">
+          مُسْعِفك
+        </h1>
+        <img
+          class="w-[6vw] lg:w-auto"
+          src="stethoscope_check (1).svg"
+          alt="Logo"
+        />
         <button
           (click)="toggleMenu()"
           class="text-gray-500 hover:text-gray-700"
         ></button>
       </div>
-      <nav class="flex flex-col space-y-[200px]">
+      <nav class="flex flex-col space-y-[5vh] lg:space-y-[200px]">
         <div class="flex flex-col space-y-4">
           <a
             routerLink="/doctor/dashboard"
@@ -110,8 +116,14 @@
         </button>
 
         <!-- Logo -->
-        <h1 class="text-[40px] font-bold text-primary">مُسْعِفك</h1>
-        <img src="stethoscope_check (1).svg" alt="" />
+        <h1 class="text-[5vw] font-bold text-primary lg:text-[40px]">
+          مُسْعِفك
+        </h1>
+        <img
+          class="w-[6vw] lg:w-auto"
+          src="stethoscope_check (1).svg"
+          alt="Logo"
+        />
       </div>
 
       <!-- Search Bar -->
@@ -158,39 +170,6 @@
         ></span>
       </button>
     </div>
-
-    <!-- Mobile Search (visible only on mobile) -->
-    <div class="mt-4 md:hidden items-center gap-6">
-      <div class="relative">
-        <input
-          type="search"
-          placeholder="البحث"
-          class="w-full px-4 py-2 rounded-[5px] border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#016239] focus:border-transparent"
-        />
-        <button
-          class="absolute right-3 top-2.5 text-gray-500 hover:text-gray-700"
-        >
-          <svg
-            class="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        class="bg-[#2E7D5C] h-[50px] w-[55px] rounded-[10px] text-[24px] text-white flex items-center justify-center"
-      >
-        <i class="fa-regular fa-bell"></i>
-      </div>
-    </div>
   </nav>
 </header>
 <router-outlet></router-outlet>
@@ -200,25 +179,27 @@
   *ngIf="isModalVisible"
   class="fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-screen bg-black bg-opacity-50"
 >
-  <div class="p-4 w-full max-w-md bg-white rounded-lg shadow-sm">
+  <div class="p-4 w-full max-w-[90%] sm:max-w-md bg-white rounded-lg shadow-sm">
     <div class="p-4 md:p-5 text-center">
       <div
-        class="flex items-center justify-center mx-auto mb-4 text-primary w-[80px] h-[80px] rounded-full bg-[#F5F8FF]"
+        class="flex items-center justify-center mx-auto mb-4 text-primary w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] rounded-full bg-[#F5F8FF]"
       >
-        <i class="fa-solid fa-arrow-right-from-bracket text-[32px]"></i>
+        <i
+          class="fa-solid fa-arrow-right-from-bracket text-[24px] sm:text-[32px]"
+        ></i>
       </div>
-      <h3 class="mb-5 text-[20px] font-medium text-[#393C44]">
+      <h3 class="mb-5 text-[18px] sm:text-[20px] font-medium text-[#393C44]">
         هل تريد تسجيل الخروج
       </h3>
       <button
         (click)="confirmLogout()"
-        class="text-white bg-primary focus:ring-4 focus:outline-none font-medium rounded-[32px] text-[16px] inline-flex items-center px-5 py-2.5 text-center"
+        class="text-white bg-primary focus:ring-4 focus:outline-none font-medium rounded-[32px] text-[14px] sm:text-[16px] inline-flex items-center px-4 py-2 sm:px-5 sm:py-2.5 text-center"
       >
         تسجيل الخروج
       </button>
       <button
         (click)="toggleModal()"
-        class="py-2.5 px-5 ms-3 text-[24px] font-medium text-red-600 focus:outline-none"
+        class="py-2 px-4 sm:py-2.5 sm:px-5 ms-3 text-[20px] sm:text-[24px] font-medium text-red-600 focus:outline-none"
       >
         الغاء
       </button>

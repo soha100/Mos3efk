@@ -28,19 +28,6 @@ export const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'doctor',
-  //   component: DoctorLayoutComponent,
-  //   children: [
-  //     {
-  //       path: 'dashboard',
-  //       loadChildren: () =>
-  //         import('./views/dashboard/dashboard.module').then(
-  //           (m) => m.DashboardModule
-  //         ),
-  //     },
-  //   ],
-  // },
   {
     path: 'doctor',
     component: DoctorLayoutComponent,

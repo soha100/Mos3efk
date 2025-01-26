@@ -1,5 +1,5 @@
 <div
-  class="w-[98%] mx-auto bg-white rounded-3xl shadow-sm drop-shadow-[0px_4px_12px_rgba(168,213,186,0.5)] flex mb-5 mt-5"
+  class="w-[98%] mx-auto bg-white rounded-3xl shadow-sm drop-shadow-[0px_4px_12px_rgba(168,213,186,0.5)] flex mt-5 mb-11"
 >
   <!-- Sidebar -->
   <div class="w-80 bg-[#A8D5BA] border-r rounded-r-3xl">
@@ -56,9 +56,9 @@
   <div class="flex-1 flex flex-col bg-white rounded-l-3xl">
     <!-- Header -->
     <div
-      class="bg-[rgba(168,213,186,0.6)] p-4 flex items-center justify-between rounded-tl-3xl"
+      class="bg-[rgba(168,213,186,0.6)] p-4 flex items-center rounded-tl-3xl"
     >
-      <div class="flex items-center justify-between">
+      <div class="flex justify-between items-center">
         <div class="flex items-center">
           <img [src]="currentUser.avatar" alt="" class="w-8 h-8 rounded-full" />
           <div class="mr-3">
@@ -70,9 +70,9 @@
             </p>
           </div>
         </div>
-        <button class="text-[#23262F] bg-[#A8D5BA] p-2 rounded-full">
+        <div class="text-[#23262F] bg-[#A8D5BA] p-2 rounded-full">
           <i class="fa-solid fa-phone"></i>
-        </button>
+        </div>
       </div>
     </div>
 
@@ -102,25 +102,23 @@
     </div>
 
     <!-- Input Area -->
-    <div class="relative border-t">
-      <div class="flex items-center gap-2 bg-gray-50 rounded-full px-4 py-2">
-        <button
-          (click)="sendMessage()"
-          class="bg-emerald-600 text-white p-2 rounded-full hover:bg-emerald-700 absolute right-8"
-        >
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
-        <!-- [(ngModel)]="newMessage" -->
-        <input
-          type="text"
-          (keyup.enter)="sendMessage()"
-          placeholder="اكتب رسالة ..."
-          class="flex-1 bg-transparent outline-none text-right rounded-3xl"
-        />
-        <button class="text-gray-500 absolute left-8">
-          <i class="fa-solid fa-microphone"></i>
-        </button>
-      </div>
+    <div class="relative flex items-center gap-2 rounded-full px-4 py-4">
+      <input
+        type="text"
+        (keyup.enter)="sendMessage()"
+        [(ngModel)]="newMessage"
+        placeholder="اكتب رسالة ..."
+        class="flex-1 bg-[#D9D9D9] outline-none focus-none border-none rounded-3xl py-5 px-16 placeholder:text-[#4F5159]"
+      />
+      <button
+        (click)="sendMessage()"
+        class="bg-primary text-white p-2 rounded-[20px] w-[50px] h-[50px] absolute right-6"
+      >
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+      <button class="text-[#4F5159] absolute left-8 text-[20px]">
+        <i class="fa-solid fa-microphone"></i>
+      </button>
     </div>
   </div>
 </div>

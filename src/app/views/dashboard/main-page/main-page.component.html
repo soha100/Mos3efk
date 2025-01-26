@@ -1,302 +1,390 @@
-<div
-  class="flex flex-col lg:flex-row gap-6 p-6 min-h-screen"
-  style="height: 100vh"
->
-  <!-- Right Column - Stats & Calendar -->
-  <div class="flex-1">
-    <!-- row-1 -->
-    <div class="flex flex-wrap gap-8">
-      <div class="w-full md:w-1/3 rounded-3xl bg-[rgba(168,213,186,0.60)]">
-        <mat-calendar></mat-calendar>
-      </div>
-
-      <div
-        class="w-full md:w-1/2 p-6 rounded-3xl bg-[rgba(168,213,186,0.60)] h-[367px] shadow-[10px_5px_12px_rgba(168,213,186,0.5)]"
-      >
-        <div class="">
-          <div class="flex justify-between items-center mb-4">
-            <div>
-              <h3 class="text-lg font-semibold text-primary">الاحصائيات</h3>
-              <span class="text-white text-sm">يناير2023</span>
-            </div>
-            <div class="bg-white px-4 py-1 rounded-[30px]">
-              <select class="outline-none border-none">
-                <option value="value1">اليومى</option>
-                <option value="value2" selected>الاسبوعى</option>
-                <option value="value3">الشهرى</option>
-              </select>
-            </div>
-          </div>
-          <div class="chart-container">
-            <canvas id="Mychart">{{ chart }}</canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- row-2 -->
-    <div class="flex gap-6 p-3">
-      <!-- القسم الأول -->
-      <div class="w-full md:w-1/3 rounded-3xl flex-grow">
-        <div class="flex">
-          <div class="flex-1 bg-[#2E7D5C] p-6 rounded-r-3xl text-white">
-            <h3 class="text-3xl font-semibold mb-2">90</h3>
-            <p class="text-sm font-medium">المرضى</p>
-            <p class="text-xs">هذا الاسبوع</p>
-            <p class="text-xs">هذا الاسبوع</p>
-            <p class="text-xs">هذا الاسبوع</p>
-          </div>
+<div class="min-h-screen p-4 lg:p-6">
+  <div class="flex flex-col lg:flex-row gap-6">
+    <!-- Main Content Column -->
+    <div class="flex-1 space-y-6">
+      <!-- Stats & Calendar Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Calendar Card -->
+        <div class="lg:col-span-5">
           <div
-            class="flex-[0.5] p-6 bg-[#A8D5BA] rounded-l-3xl flex items-center justify-center"
+            class="h-full rounded-3xl bg-[rgba(168,213,186,0.60)] p-4 shadow-[10px_5px_12px_rgba(168,213,186,0.5)]"
           >
-            <svg
-              class="w-12 h-12 text-[#2E7D5C]"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <app-calender></app-calender>
+          </div>
+        </div>
+
+        <!-- Stats Card -->
+        <div class="lg:col-span-7">
+          <div
+            class="h-full rounded-3xl bg-[rgba(168,213,186,0.60)] p-6 shadow-[10px_5px_12px_rgba(168,213,186,0.5)]"
+          >
+            <div class="flex flex-wrap justify-between items-center mb-6">
+              <div>
+                <h3 class="text-lg font-semibold text-primary">الاحصائيات</h3>
+                <span class="text-white text-sm">يناير2023</span>
+              </div>
+              <div class="bg-white px-4 py-2 rounded-[30px]">
+                <select class="outline-none border-none bg-transparent">
+                  <option value="daily">اليومى</option>
+                  <option value="weekly" selected>الاسبوعى</option>
+                  <option value="monthly">الشهرى</option>
+                </select>
+              </div>
+            </div>
+            <div class="chart-container h-[250px]">
+              <app-chart></app-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Cards Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Patients Card -->
+        <div
+          class="rounded-3xl shadow-[0px_4px_12px_rgba(168,213,186,0.5)] overflow-hidden"
+        >
+          <div class="flex h-full">
+            <div class="flex-1 bg-[#2E7D5C] p-6 rounded-r-3xl text-white">
+              <h3 class="text-3xl font-semibold mb-2">90</h3>
+              <div class="space-y-1">
+                <p class="text-sm font-medium">المرضى</p>
+                <p class="text-xs opacity-80">هذا الاسبوع</p>
+                <p class="text-xs opacity-80">هذا الاسبوع</p>
+                <p class="text-xs opacity-80">هذا الاسبوع</p>
+              </div>
+            </div>
+            <div
+              class="w-20 bg-[#A8D5BA] rounded-l-3xl flex items-center justify-center"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 4v16m8-8H4"
+              <svg
+                class="w-10 h-10 text-[#2E7D5C]"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4v16m8-8H4"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Appointment Card -->
+        <div
+          class="p-6 rounded-3xl bg-[#A8D5BA] shadow-[0px_4px_12px_rgba(168,213,186,0.5)]"
+        >
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-primary">الموعد القادم</h3>
+            <button
+              class="p-2 bg-primary rounded-full text-white hover:bg-primary/90 transition-colors"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="relative">
+              <img
+                src="pataint-1.png"
+                alt=""
+                class="w-14 h-14 rounded-full bg-emerald-100 object-cover"
               />
-            </svg>
+            </div>
+            <div>
+              <h2 class="font-bold text-primary mb-1">ابراهيم الدسوقى</h2>
+              <span class="text-white flex items-center gap-2">
+                <i class="fa-regular fa-clock"></i>
+                <span>08:00-09:00</span>
+              </span>
+              <p class="text-primary mt-1">شخصيا</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!--  القسم الثانى-->
-      <div class="w-full md:w-1/3 p-6 rounded-3xl bg-[#A8D5BA] flex-grow">
-        <div class="flex gap-3 mb-4">
-          <button class="px-3 bg-primary rounded-3xl text-white">
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-          <h3 class="text-lg font-bold text-primary">الموعد القادم</h3>
-        </div>
-        <div class="flex gap-10 items-center">
-          <div class="w-[60px] h-[60px] bg-emerald-100 rounded-full ml-[-20px]">
-            <img src="pataint-1.png" alt="" />
-          </div>
-          <div>
-            <h2 class="font-bold text-primary">ابراهيم الدسوقى</h2>
-            <span class="text-white">
-              <i class="fa-regular fa-clock"></i> 08:00-09:00</span
-            >
-            <p class="text-primary">شخصيا</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- القسم الثالث -->
-      <div class="w-full md:w-1/3 p-5 rounded-3xl bg-[#A8D5BA]">
-        <div class="flex items-center justify-between mb-4">
-          <div>
-            <h3 class="text-lg font-bold text-primary">مكالمات الفيديو</h3>
-            <span class="text-gray-500">
-              <i class="fa-regular fa-clock"></i> 05:00-06:00</span
-            >
-          </div>
-          <button
-            class="w-[40px] h-[40px] p-2 bg-primary rounded-full text-white"
-          >
-            <i class="fa-solid fa-bell"></i>
-          </button>
-        </div>
-        <div class="flex gap-2 justify-between">
-          <div class="flex">
-            <div class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]">
-              <img src="pataint-3.png" alt="" />
-            </div>
-            <div class="w-8 h-8 bg-[#BBF8F1] rounded-full ml-[-10px]">
-              <img src="pataint-2.png" alt="" />
-            </div>
-            <div class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]">
-              <img src="pataint-3.png" alt="" />
-            </div>
-            <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
-          </div>
-          <button class="px-3 bg-primary rounded-3xl text-white">
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- row-3 -->
-    <div class="flex gap-6 p-3">
-      <div class="w-full md:w-1/2 mt-3">
-        <h3 class="text-lg font-semibold m-3 text-primary">مواعيد اليوم</h3>
-        <div class="bg-[#A8D5BA] p-6 rounded-3xl shadow-lg h-[270px]">
-          <div class="space-y-4">
-            <div class="flex items-center gap-4 pb-4">
-              <span class="text-emerald-600">08:00</span>
-              <div class="flex-1 h-px bg-gray-200"></div>
-              <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
-            </div>
-            <div class="flex items-center gap-4 pb-4">
-              <span class="text-emerald-600">09:00</span>
-              <div class="flex-1 h-px bg-gray-200"></div>
-              <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
-            </div>
-            <div class="flex items-center gap-4 pb-4">
-              <span class="text-emerald-600">10:00</span>
-              <div class="flex-1 h-px bg-gray-200"></div>
-              <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
-            </div>
-            <div class="flex items-center gap-4">
-              <span class="text-emerald-600">11:00</span>
-              <div class="flex-1 h-px bg-gray-200"></div>
-              <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="w-full md:w-1/2 p-6 rounded-3xl flex flex-col space-y-6">
-        <div class="w-full p-6 rounded-3xl bg-[#A8D5BA] flex-grow">
+        <!-- Video Calls Card -->
+        <div
+          class="p-6 rounded-3xl bg-[#A8D5BA] shadow-[0px_4px_12px_rgba(168,213,186,0.5)]"
+        >
           <div class="flex items-center justify-between mb-6">
             <div>
-              <h3 class="text-lg font-bold text-primary">المتابعة</h3>
+              <h3 class="text-lg font-bold text-primary mb-1">
+                مكالمات الفيديو
+              </h3>
+              <span class="text-gray-600 flex items-center gap-2">
+                <i class="fa-regular fa-clock"></i>
+                <span>05:00-06:00</span>
+              </span>
             </div>
             <button
-              class="w-[40px] h-[40px] p-2 bg-primary rounded-[10px] text-white"
+              class="w-10 h-10 bg-primary rounded-full text-white flex items-center justify-center hover:bg-primary/90 transition-colors"
             >
-              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-bell"></i>
             </button>
           </div>
-          <div class="flex gap-2 justify-between">
-            <div class="flex">
-              <div class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]">
-                <img src="pataint-3.png" alt="" />
+          <div class="flex justify-between items-center">
+            <div class="flex -space-x-3 space-x-reverse">
+              <div class="w-8 h-8 rounded-full overflow-hidden">
+                <img
+                  src="pataint-3.png"
+                  alt=""
+                  class="bg-[#E8BBF8] rounded-full ml-[-10px]"
+                />
               </div>
-              <div class="w-8 h-8 bg-[#BBF8F1] rounded-full ml-[-10px]">
-                <img src="pataint-2.png" alt="" />
+              <div class="w-8 h-8 rounded-full overflow-hidden">
+                <img
+                  src="pataint-2.png"
+                  alt=""
+                  class="bg-[#BBF8F1] rounded-full ml-[-10px]"
+                />
               </div>
-              <div class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]">
-                <img src="pataint-3.png" alt="" />
+              <div class="w-8 h-8 rounded-full overflow-hidden">
+                <img
+                  src="pataint-3.png"
+                  alt=""
+                  class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]"
+                />
               </div>
-              <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
+              <div class="w-8 h-8 rounded-full bg-emerald-100"></div>
             </div>
-            <button class="px-4 py-2 bg-primary rounded-[10px] text-white">
+            <button
+              class="p-2 bg-primary rounded-full text-white hover:bg-primary/90 transition-colors"
+            >
               <i class="fa-solid fa-arrow-left"></i>
             </button>
           </div>
         </div>
+      </div>
 
-        <div class="w-full p-6 rounded-3xl bg-[#A8D5BA] flex-grow">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-semibold text-primary">لاغى موعد</h3>
-          </div>
-          <div class="flex gap-2 justify-between">
-            <div class="flex">
-              <div class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]">
-                <img src="pataint-3.png" alt="" />
+      <!-- Bottom Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Today's Appointments -->
+        <div class="w-full mt-3">
+          <h3 class="text-[24px] font-bold m-2 text-primary">مواعيد اليوم</h3>
+          <div class="bg-[#A8D5BA] p-6 rounded-3xl shadow-lg">
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 pb-2">
+                <span class="text-emerald-600">08:00</span>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
               </div>
-              <div class="w-8 h-8 bg-[#BBF8F1] rounded-full ml-[-10px]">
-                <img src="pataint-2.png" alt="" />
+              <div class="flex items-center gap-4 pb-2">
+                <span class="text-emerald-600">09:00</span>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
               </div>
-              <div class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]">
-                <img src="pataint-3.png" alt="" />
+              <div class="flex items-center gap-4 pb-2">
+                <span class="text-emerald-600">10:00</span>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
               </div>
-              <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
+              <div class="flex items-center gap-4">
+                <span class="text-emerald-600">11:00</span>
+                <div class="flex-1 h-px bg-gray-200"></div>
+                <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
+              </div>
             </div>
-            <button class="px-4 py-2 bg-primary rounded-[10px] text-white">
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
+          </div>
+        </div>
+
+        <!-- Follow-up & Cancelled -->
+        <div class="space-y-6">
+          <!-- Follow-up Section -->
+          <div
+            class="p-6 rounded-3xl bg-[#A8D5BA] shadow-[0px_4px_12px_rgba(168,213,186,0.5)]"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-bold text-primary">المتابعة</h3>
+              <button
+                class="w-10 h-10 bg-primary rounded-xl text-white flex items-center justify-center hover:bg-primary/90 transition-colors"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex -space-x-3 space-x-reverse">
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-3.png"
+                    alt=""
+                    class="bg-[#E8BBF8] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-2.png"
+                    alt=""
+                    class="bg-[#BBF8F1] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-3.png"
+                    alt=""
+                    class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full bg-emerald-100"></div>
+              </div>
+              <button
+                class="p-2 bg-primary rounded-full text-white hover:bg-primary/90 transition-colors"
+              >
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cancelled Section -->
+          <div
+            class="p-6 rounded-3xl bg-[#A8D5BA] shadow-[0px_4px_12px_rgba(168,213,186,0.5)]"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-bold text-primary">لاغى موعد</h3>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex -space-x-3 space-x-reverse">
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-3.png"
+                    alt=""
+                    class="bg-[#E8BBF8] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-2.png"
+                    alt=""
+                    class="bg-[#BBF8F1] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-3.png"
+                    alt=""
+                    class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full bg-emerald-100"></div>
+              </div>
+              <button
+                class="p-2 bg-primary rounded-full text-white hover:bg-primary/90 transition-colors"
+              >
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Left Column - Chat Section -->
 
-  <div class="w-full" style="width: 400px; height: 100vh">
-    <div class="bg-primary text-white p-6 rounded-3xl h-full">
-      <div class="flex flex-col items-center mb-6">
-        <div class="relative w-24 h-24 mb-3">
-          <img
-            src="Image.png"
-            alt="Doctor profile"
-            class="rounded-full border-4 border-white object-cover"
-            style="width: 100%; height: 100%"
-          />
-        </div>
-        <h2 class="text-xl font-semibold mb-1">د/محمد رمضان</h2>
-        <p class="text-emerald-200 text-sm">اخصائي اسنان</p>
+    <!-- Chat Column -->
+    <div class="w-full lg:w-[400px] shrink-0">
+      <div
+        class="bg-primary text-white rounded-3xl p-6 shadow-[10px_5px_12px_rgba(168,213,186,0.5)] h-[970px]"
+      >
+        <!-- Profile Section -->
+        <div class="flex flex-col items-center mt-5 mb-10">
+          <div class="relative w-24 h-24 mb-3">
+            <img
+              src="Image.png"
+              alt="Doctor profile"
+              class="rounded-full border-4 border-white object-cover w-full h-full"
+            />
+          </div>
+          <h2 class="text-xl font-semibold mb-1">د/محمد رمضان</h2>
+          <p class="text-emerald-200 text-sm">اخصائي اسنان</p>
 
-        <div
-          class="flex w-full justify-between mt-10 rounded-[30px] border p-4"
-        >
-          <h2 class="px-4 py-2 bg-primary text-white font-bold text-[16px]">
-            المرضى
-          </h2>
-          <div class="flex">
-            <div class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]">
-              <img src="pataint-3.png" alt="" />
+          <!-- Patients Preview -->
+          <div
+            class="flex w-full justify-between mt-10 rounded-[30px] border p-4"
+          >
+            <h2 class="font-bold text-[16px]">المرضى</h2>
+            <div class="flex -space-x-3 space-x-reverse">
+              <div class="flex -space-x-3 space-x-reverse">
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-3.png"
+                    alt=""
+                    class="bg-[#E8BBF8] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-2.png"
+                    alt=""
+                    class="bg-[#BBF8F1] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img
+                    src="pataint-3.png"
+                    alt=""
+                    class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]"
+                  />
+                </div>
+                <div class="w-8 h-8 rounded-full bg-emerald-100"></div>
+              </div>
             </div>
-            <div class="w-8 h-8 bg-[#BBF8F1] rounded-full ml-[-10px]">
-              <img src="pataint-2.png" alt="" />
-            </div>
-            <div class="w-8 h-8 bg-[#E8BBF8] rounded-full ml-[-10px]">
-              <img src="pataint-3.png" alt="" />
-            </div>
-            <div class="w-8 h-8 bg-emerald-100 rounded-full"></div>
           </div>
         </div>
-      </div>
 
-      <div class="space-y-4 flex flex-col justify-between h-full">
-        <!-- Chat messages -->
-        <!-- <div class="flex items-center gap-3">
-          <div class="w-8 h-8 bg-emerald-600 rounded-full flex-shrink-0"></div>
-          <div class="bg-emerald-600/50 p-3 rounded-2xl">
-            <p class="text-sm">ابراهيم الدسوقي</p>
-            <p class="text-xs text-emerald-200">منذ 15 دقيقه</p>
+        <!-- Chat Section -->
+        <div class="border rounded-3xl h-[460px] p-3 flex flex-col h-[600px]">
+          <!-- Chat Header -->
+          <div class="flex items-center justify-between p-3 border-b">
+            <div class="flex items-center gap-3">
+              <img src="Ellipse 1.png" alt="" class="w-10 h-10 rounded-full" />
+              <div>
+                <p class="font-medium">ابراهيم الدسوقي</p>
+                <p class="text-xs text-emerald-200">منذ 15 دقيقه</p>
+              </div>
+            </div>
+            <button
+              class="w-10 h-10 bg-[#A8D5BA] rounded-full flex items-center justify-center text-white hover:bg-[#97c4a9] transition-colors"
+            >
+              <i class="fa-solid fa-phone"></i>
+            </button>
           </div>
-        </div> -->
 
-        <!-- Message input -->
-        <!-- <div class="flex gap-2 mt-4">
-          <input
-            type="text"
-            placeholder="اكتب رسالة..."
-            class="w-full bg-emerald-600/50 rounded-full px-4 py-2 text-white placeholder:text-emerald-200"
-          />
-          <button class="p-2 bg-emerald-600 rounded-full">
-            <svg
-              class="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          <!-- Messages -->
+          <div class="flex-1 overflow-y-auto p-4 space-y-6">
+            <div class="flex gap-3">
+              <img src="Ellipse 1.png" class="w-10 h-10 rounded-full" />
+              <div class="max-w-[70%] rounded-2xl p-3 bg-[#A8D5BA]">
+                <p class="text-gray-800">مرحبا دكتور محمد</p>
+              </div>
+            </div>
+            <div class="flex gap-3 justify-end">
+              <div class="max-w-[70%] rounded-2xl p-3 bg-white">
+                <p class="text-gray-800">مرحبا ابراهيم</p>
+              </div>
+              <img src="Image 3.png" class="w-10 h-10 rounded-full" />
+            </div>
+          </div>
+
+          <!-- Message Input -->
+          <div class="relative mt-4">
+            <input
+              type="text"
+              placeholder="اكتب رسالة ..."
+              class="w-full bg-[#D9D9D9] rounded-3xl py-4 px-16 placeholder:text-[#4F5159] focus:outline-none"
+            />
+            <button
+              class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-white p-3 rounded-2xl hover:bg-primary/90 transition-colors"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </button>
-          <button class="p-2 bg-emerald-600 rounded-full">
-            <svg
-              class="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <button
+              class="absolute left-4 top-1/2 -translate-y-1/2 text-[#4F5159] text-xl hover:text-gray-700 transition-colors"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 4v16m8-8H4"
-              />
-            </svg>
-          </button>
-        </div> -->
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

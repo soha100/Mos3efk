@@ -4,163 +4,57 @@
   <div
     class="border shadow-[0px_4px_12px_#a8d5ba] bg-[white] box-border min-w-[1088px] pt-8 pb-11 px-[22px] rounded-[30px] border-solid border-[#a8d5ba]"
   >
-    <div class="flex flex-wrap p-3">
-      <!-- class="shadow-[10px_5px_12px_#a8d5ba] bg-[rgba(168,213,186,0.40)] box-border flex justify-start items-center flex-col grow-0 shrink-0 basis-auto ml-6 pt-6 pb-9 px-[33px] rounded-[30px]" -->
-      <div class="w-full md:w-1/2 p-6 rounded-3xl">
-        <!-- <mat-card class="">
-          <mat-calendar
-            [dateClass]="dateClass" 
-            (selectedChange)="onDateSelected($event)">
-          </mat-calendar>
-        </mat-card> -->
+    <div class="flex flex-wrap gap-12">
+      <!-- class="shadow-[10px_5px_12px_#a8d5ba] bg-[rgba(168,213,186,0.40)] box-border flex justify-start items-center flex-col   ml-6 pt-6 pb-9 px-[33px] rounded-[30px]" -->
+      <div
+        class="w-full md:w-[390px] rounded-3xl bg-[rgba(168,213,186,0.60)] h-[390px]"
+      >
+        <app-calender></app-calender>
       </div>
 
-      <div
-        class="flex justify-start items-stretch flex-col w-[617px] grow-0 shrink-0 basis-auto box-border"
-      >
-        <div
-          class="box-border flex justify-start items-end flex-col gap-4 grow-0 shrink-0 basis-auto"
-        >
-          <p
-            class="text-xl font-bold text-right text-[#2e7d5c] h-6 self-stretch grow-0 shrink-0 basis-auto box-border m-0 p-0"
-          >
+      <div class="flex flex-col flex-1 box-border">
+        <!-- Confirmed Appointments Section -->
+        <div class="box-border flex flex-col gap-4">
+          <p class="text-xl font-bold text-right text-[#2e7d5c] h-6 m-0 p-0">
             المواعيد المؤكدة
           </p>
 
           <div
-            class="box-border flex justify-between items-center flex-row flex-wrap h-[150px] self-stretch grow-0 shrink-0 basis-auto"
+            class="box-border flex flex-wrap justify-start items-center gap-4 h-[150px]"
           >
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              11:00 ص
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              10:00 ص
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              09:00 ص
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              03:00 م
-            </button>
-
-            <button
-              class="bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-[none]"
-            >
-              02:00 م
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              01:00 م
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              08:00 م
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              07:00 م
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              04:00 م
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              04:00 م
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              04:00 م
-            </button>
-
-            <button
-              class="border bg-[#2e7d5c] text-xs font-normal text-[white] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[white]"
-            >
-              04:00 م
-            </button>
+            <!-- Confirmed Buttons -->
+            <button class="btn-confirmed">11:00 ص</button>
+            <button class="btn-confirmed">10:00 ص</button>
+            <button class="btn-confirmed">09:00 ص</button>
+            <button class="btn-confirmed">03:00 م</button>
+            <button class="btn-confirmed">02:00 م</button>
+            <button class="btn-confirmed">01:00 م</button>
+            <button class="btn-confirmed">08:00 م</button>
+            <button class="btn-confirmed">07:00 م</button>
+            <button class="btn-confirmed">04:00 م</button>
           </div>
         </div>
 
-        <div
-          class="box-border flex justify-start items-end flex-col gap-4 grow-0 shrink-0 basis-auto mt-12"
-        >
-          <p
-            class="[font-family:Poppins,sans-serif] text-xl font-bold text-right text-[#2e7d5c] h-6 self-stretch grow-0 shrink-0 basis-auto box-border m-0 p-0"
-          >
+        <!-- Available Appointments Section -->
+        <div class="box-border flex flex-col gap-4 mt-12">
+          <p class="text-xl font-bold text-right text-[#2e7d5c] h-6 m-0 p-0">
             المواعيد المتاحة
           </p>
 
           <div
-            class="box-border flex justify-between items-center flex-row flex-wrap h-[89px] self-stretch grow-0 shrink-0 basis-auto"
+            class="box-border flex flex-wrap justify-start items-center gap-4 h-[89px]"
           >
-            <button
-              class="border bg-[white] text-xs font-normal text-[#2e7d5c] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[#2e7d5c]"
-            >
-              11:00 ص
-            </button>
-
-            <button
-              class="border bg-[white] text-xs font-normal text-[#2e7d5c] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[#2e7d5c]"
-            >
-              10:00 ص
-            </button>
-
-            <button
-              class="border bg-[white] text-xs font-normal text-[#2e7d5c] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[#2e7d5c]"
-            >
-              09:00 ص
-            </button>
-
-            <button
-              class="border bg-[white] text-xs font-normal text-[#2e7d5c] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[#2e7d5c]"
-            >
-              03:00 م
-            </button>
-
-            <div
-              class="box-border flex justify-end items-center flex-row gap-[38px] w-[617px] grow-0 shrink-0 basis-auto"
-            >
-              <button
-                class="border bg-[white] text-xs font-normal text-[#2e7d5c] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[#2e7d5c]"
-              >
-                01:00 م
-              </button>
-
-              <button
-                class="border bg-[white] text-xs font-normal text-[#2e7d5c] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[#2e7d5c]"
-              >
-                08:00 م
-              </button>
-
-              <button
-                class="border bg-[white] text-xs font-normal text-[#2e7d5c] cursor-pointer min-w-[125px] h-[38px] w-[125px] block box-border grow-0 shrink-0 basis-auto rounded-lg border-solid border-[#2e7d5c]"
-              >
-                07:00 م
-              </button>
-            </div>
+            <!-- Available Buttons -->
+            <button class="btn-available">11:00 ص</button>
+            <button class="btn-available">10:00 ص</button>
+            <button class="btn-available">09:00 ص</button>
+            <button class="btn-available">03:00 م</button>
+            <button class="btn-available">01:00 م</button>
+            <button class="btn-available">08:00 م</button>
+            <button class="btn-available">07:00 م</button>
+            <button class="btn-available">01:00 م</button>
+            <button class="btn-available">05:00 م</button>
+            <button class="btn-available">02:00 م</button>
           </div>
         </div>
       </div>
